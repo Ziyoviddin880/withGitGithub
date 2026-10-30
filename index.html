@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Issiq va mazali nonlar. Sevimli noningizni onlayn buyurtma qiling!"
+    />
+    <title>Baraka Non — Yangi pishgan nonlar</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="topbar">
+      <p>🥖 NON— dasturxoningizga baraka!</p>
+    </div>
+
+    <header class="header">
+      <a href="#home" class="logo">
+        <span class="logo-icon">🥯</span>
+        <span>Baraka <b>Non</b><small>Mehr bilan pishiramiz</small></span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Menyuni ochish">
+        ☰
+      </button>
+
+      <nav class="nav" id="nav">
+        <a href="#home">Bosh sahifa</a>
+        <a href="#products">Nonlarimiz</a>
+        <a href="#about">Biz haqimizda</a>
+        <a href="#delivery">Yetkazib berish</a>
+        <a href="#contact">Aloqa</a>
+      </nav>
+
+      <a href="./cart.html" class="cart-button">
+        🛒 Savat <span id="cartCount">0</span>
+      </a>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-content">
+          <span class="eyebrow">❤️ Har kuni mehr bilan</span>
+          <h1>
+            Dasturxoningizga<br />
+            <span>issiq non</span> olib keling!
+          </h1>
+          <p>
+            Tandirdan yangi uzilgan, xushbo‘y va mazali nonlar. Sevimli
+            noningizni tanlang, qolganini bizga qo‘ying.
+          </p>
+          <div class="hero-actions">
+            <a href="#products" class="btn btn-primary">Nonlarni ko‘rish →</a>
+            <a href="#about" class="btn btn-light">Biz haqimizda</a>
+          </div>
+
+          <div class="hero-stats">
+            <div><strong>100%</strong><span>Halol masalliqlar</span></div>
+            <div><strong>Har kuni</strong><span>Yangi pishiriladi</span></div>
+            <div><strong>Mehr bilan</strong><span>Har bir non</span></div>
+          </div>
+        </div>
+
+        <div class="hero-image">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtaKdrGm90mYAKRM3u-ZSKFViQskwmRnbV_wqSyU16uQ&s=10"
+            alt="Yangi pishgan nonlar"
+          />
+          <div class="image-badge">
+            <span>🔥</span>
+            <div>
+              <strong>Yangi pishgan</strong><small>Har kuni siz uchun</small>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="benefits">
+        <article>
+          <span>🌾</span>
+          <div>
+            <strong>Sifatli masalliqlar</strong>
+            <p>Sinovdan o‘tgan mahsulotlar</p>
+          </div>
+        </article>
+        <article>
+          <span>🔥</span>
+          <div>
+            <strong>Yangi pishiriladi</strong>
+            <p>Har kuni issiq va xushbo‘y</p>
+          </div>
+        </article>
+        <article>
+          <span>🚚</span>
+          <div>
+            <strong>Yetkazib berish</strong>
+            <p>Manzilingizgacha buyurtma</p>
+          </div>
+        </article>
+        <article>
+          <span>💛</span>
+          <div>
+            <strong>Mehr bilan</strong>
+            <p>Ta'm va sifat uyg‘unligi</p>
+          </div>
+        </article>
+      </section>
+
+      <section class="products-section section" id="products">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">BIZNING MAHSULOTLAR</span>
+            <h2>Nonlarimiz bilan tanishing</h2>
+            <p>O‘zingizga yoqqan nonni tanlang va savatga qo‘shing.</p>
+          </div>
+          <div class="search-box">
+            <span>⌕</span>
+            <input
+              type="search"
+              id="searchInput"
+              placeholder="Non qidirish..."
+              aria-label="Non qidirish"
+            />
+          </div>
+        </div>
+
+        <div class="filters" id="categoryFilters">
+          <button class="filter active" data-category="all">Barchasi</button>
+          <button class="filter" data-category="milliy">Milliy nonlar</button>
+          <button class="filter" data-category="patir">Patirlar</button>
+          <button class="filter" data-category="shirin">Shirin nonlar</button>
+        </div>
+
+        <div class="product-grid" id="productGrid"></div>
+        <p class="empty-message" id="emptyMessage" hidden>
+          Bu nomdagi non topilmadi. Boshqa nom bilan qidiring.
+        </p>
+
+        <div class="cart-panel" id="cart">
+          <div class="cart-header">
+            <div>
+              <span class="eyebrow">BUYURTMANGIZ</span>
+              <h2>🛒 Savatingiz</h2>
+            </div>
+            <button id="clearCart" class="text-button">Savatni tozalash</button>
+          </div>
+
+          <div id="cartItems" class="cart-items">
+            <p class="cart-empty">
+              Savatingiz hozircha bo‘sh. Mazali nonlardan tanlang! 🥖
+            </p>
+          </div>
+
+          <div class="cart-summary">
+            <div>
+              <span>Mahsulotlar jami:</span
+              ><strong id="subtotal">0 so‘m</strong>
+            </div>
+            <div>
+              <span>Yetkazib berish:</span
+              ><strong id="deliveryPrice">0 so‘m</strong>
+            </div>
+            <div class="total">
+              <span>Jami to‘lov:</span><strong id="totalPrice">0 so‘m</strong>
+            </div>
+            <p class="delivery-note">
+              🚚 100 000 so‘mdan yuqori buyurtmaga yetkazib berish bepul.
+            </p>
+            <button class="btn btn-primary full-width" id="checkoutButton">
+              Buyurtma berish →
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-section section" id="about">
+        <div class="about-image">
+          <img
+            src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=900&q=85"
+            alt="Nonvoyxonada tayyorlangan yangi non"
+            loading="lazy"
+          />
+          <div class="about-sticker">🥖<br />An'anaviy<br />ta'm</div>
+        </div>
+        <div class="about-content">
+          <span class="eyebrow">BIZ HAQIMIZDA</span>
+          <h2>Oddiy non emas,<br />bu — <span>mehr ta'mi!</span></h2>
+          <p>
+            Baraka Non — oilangiz dasturxoniga sifatli va mazali nonlar
+            yetkazishni maqsad qilgan nonvoyxona. Har bir mahsulotimizni sifat
+            va ta'mga e'tibor bilan tayyorlaymiz.
+          </p>
+          <ul class="check-list">
+            <li>✓ Sifatli masalliqlardan foydalanamiz</li>
+            <li>✓ Tozalik va gigiyenaga amal qilamiz</li>
+            <li>✓ Buyurtmalarni imkon qadar tez tayyorlaymiz</li>
+            <li>✓ Mijozlar fikrini qadrlaymiz</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary">Biz bilan bog‘laning</a>
+        </div>
+      </section>
+
+      <section class="delivery-section section" id="delivery">
+        <div class="delivery-heading">
+          <span class="eyebrow">QANDAY BUYURTMA BERILADI?</span>
+          <h2>Issiq noningizga uch qadam</h2>
+          <p>Sevimli noningizni tanlang — buyurtma berish juda oson.</p>
+        </div>
+        <div class="steps">
+          <article class="step-card">
+            <span class="step-number">01</span>
+            <div class="step-icon">🥖</div>
+            <h3>Nonni tanlang</h3>
+            <p>
+              Mahsulotlarimizni ko‘ring va yoqqan nonlaringizni savatga
+              qo‘shing.
+            </p>
+          </article>
+          <article class="step-card">
+            <span class="step-number">02</span>
+            <div class="step-icon">📝</div>
+            <h3>Buyurtma bering</h3>
+            <p>
+              Ismingiz, telefon raqamingiz va yetkazib berish manzilini
+              kiriting.
+            </p>
+          </article>
+          <article class="step-card">
+            <span class="step-number">03</span>
+            <div class="step-icon">🚚</div>
+            <h3>Buyurtmani oling</h3>
+            <p>
+              Buyurtma tafsilotlarini kelishib oling va nonlaringizni qabul
+              qiling.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="contact-section section" id="contact">
+        <div class="contact-info">
+          <span class="eyebrow">BIZ BILAN ALOQA</span>
+          <h2>Sizni kutib qolamiz!</h2>
+          <p>
+            Savollaringiz bormi? Biz bilan bog‘laning yoki nonvoyxonamizga
+            tashrif buyuring.
+          </p>
+
+          <div class="contact-item">
+            <span>📍</span>
+            <div>
+              <strong>Manzil</strong>
+              <p>Toshkent shahri, manzilingizni shu yerga yozing</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span>📞</span>
+            <div>
+              <strong>Telefon</strong>
+              <p><a href="tel:+998901234567">+998 90 123 45 67</a></p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span>🕒</span>
+            <div>
+              <strong>Ish vaqti</strong>
+              <p>Har kuni: 06:00 – 21:00</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span>✉️</span>
+            <div>
+              <strong>Elektron pochta</strong>
+              <p><a href="mailto:info@barakanon.uz">info@barakanon.uz</a></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-card-icon">💬</div>
+          <h3>Bizga yozing</h3>
+          <p>
+            Buyurtma va savollaringiz uchun telefon orqali bog‘lanishingiz
+            mumkin.
+          </p>
+          <a class="btn btn-primary full-width" href="tel:+998901234567"
+            >📞 Qo‘ng‘iroq qilish</a
+          >
+          <p class="small-note">
+            Telefon raqami va aloqa ma'lumotlarini o‘zingiznikiga almashtiring.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <a href="#home" class="logo footer-logo">
+        <span class="logo-icon">🥯</span>
+        <span>Baraka <b>Non</b><small>Mehr bilan pishiramiz</small></span>
+      </a>
+      <p>
+        © <span id="currentYear"></span> Baraka Non. Barcha huquqlar
+        himoyalangan.
+      </p>
+      <a href="#home" class="back-top">Yuqoriga ↑</a>
+    </footer>
+
+    <div class="modal-overlay" id="orderModal" hidden>
+      <div
+        class="order-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalTitle"
+      >
+        <button
+          type="button"
+          class="modal-close"
+          id="closeModal"
+          aria-label="Yopish"
+        >
+          ×
+        </button>
+        <span class="eyebrow">OXIRGI QADAM</span>
+        <h2 id="modalTitle">Buyurtmani rasmiylashtirish</h2>
+        <p class="modal-description">
+          Ma'lumotlaringizni kiriting. Buyurtma hali serverga yuborilmaydi.
+        </p>
+
+        <form id="orderForm">
+          <label for="customerName">Ism va familiya</label>
+          <input
+            id="customerName"
+            name="name"
+            type="text"
+            placeholder="Ismingiz"
+            required
+            minlength="2"
+          />
+
+          <label for="customerPhone">Telefon raqami</label>
+          <input
+            id="customerPhone"
+            name="phone"
+            type="tel"
+            placeholder="+998 90 123 45 67"
+            required
+          />
+
+          <label for="customerAddress">Yetkazib berish manzili</label>
+          <textarea
+            id="customerAddress"
+            name="address"
+            placeholder="Ko‘cha, uy, xonadon..."
+            required
+            minlength="5"
+          ></textarea>
+
+          <label for="customerComment">Qo‘shimcha izoh (ixtiyoriy)</label>
+          <textarea
+            id="customerComment"
+            name="comment"
+            placeholder="Masalan, mo‘ljal yoki boshqa talablar"
+          ></textarea>
+
+          <div class="modal-total">
+            <span>Buyurtma summasi</span>
+            <strong id="modalTotal">0 so‘m</strong>
+          </div>
+
+          <button type="submit" class="btn btn-primary full-width">
+            Buyurtmani tasdiqlash
+          </button>
+          <p class="small-note">
+            Demo versiya: buyurtma faqat brauzerda ko‘rsatiladi.
+          </p>
+        </form>
+        <div id="orderResult" class="order-result" role="status" hidden></div>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
